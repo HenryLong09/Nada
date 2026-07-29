@@ -1,0 +1,7 @@
+Z:\Code\Nada\obj\Debug\Nada.csproj.AssemblyReference.cache
+Z:\Code\Nada\obj\Debug\Nada.csproj.CoreCompileInputs.cache
+Z:\Code\Nada\bin\Debug\Nada.exe.config
+Z:\Code\Nada\bin\Debug\Nada.exe
+Z:\Code\Nada\bin\Debug\Nada.pdb
+Z:\Code\Nada\obj\Debug\Nada.exe
+Z:\Code\Nada\obj\Debug\Nada.pdb

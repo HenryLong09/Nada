@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\Code\\Nada\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|z:\\code\\nada\\lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|z:\\code\\nada\\lexer\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:lexer\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lexer.cs",
+              "DocumentMoniker": "Z:\\Code\\Nada\\Lexer\\Lexer.cs",
+              "RelativeDocumentMoniker": "Lexer\\Lexer.cs",
+              "ToolTip": "Z:\\Code\\Nada\\Lexer\\Lexer.cs",
+              "RelativeToolTip": "Lexer\\Lexer.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAQwKcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T21:42:15.452Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "0930c2b3-9e6c-4166-aa1d-81c5d764bea5",
+        "Display": 1,
+        "X": 393,
+        "Y": 189,
+        "Width": 2218,
+        "Height": 1147,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Token.cs",
+              "DocumentMoniker": "Z:\\Code\\Nada\\Lexer\\Token.cs",
+              "RelativeDocumentMoniker": "Lexer\\Token.cs",
+              "ToolTip": "Z:\\Code\\Nada\\Lexer\\Token.cs",
+              "RelativeToolTip": "Lexer\\Token.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwCMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T19:01:15.213Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
