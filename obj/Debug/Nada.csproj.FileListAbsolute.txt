@@ -5,3 +5,10 @@ Z:\Code\Nada\bin\Debug\Nada.exe
 Z:\Code\Nada\bin\Debug\Nada.pdb
 Z:\Code\Nada\obj\Debug\Nada.exe
 Z:\Code\Nada\obj\Debug\Nada.pdb
+C:\Users\wolfg\Desktop\Nada\bin\Debug\Nada.exe.config
+C:\Users\wolfg\Desktop\Nada\bin\Debug\Nada.exe
+C:\Users\wolfg\Desktop\Nada\bin\Debug\Nada.pdb
+C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.csproj.AssemblyReference.cache
+C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.csproj.CoreCompileInputs.cache
+C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.exe
+C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.pdb

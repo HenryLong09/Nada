@@ -13,7 +13,7 @@ namespace LexerClass
 {
     internal class Lexer
     {
-        
+
 
         public void Main()
         {
@@ -54,43 +54,54 @@ namespace LexerClass
             //where the tokens will be identified           
             List<TokenClass> Tokens = new List<TokenClass>();
             int line = 0;
-            
+            bool error;
+
             for (int i = 0; i < strings.Length; i++)
             {
-                
+                error = true;
                 switch (strings[i])  // no colon here
                 {
                     //single character tokens
                     case '(':
                         Tokens.Add(new TokenClass(TokenType.LEFT_PAREN, "(", null, line));
+                        error = false;
                         break;
                     case ')':
                         Tokens.Add(new TokenClass(TokenType.RIGHT_PAREN, ")", null, line));
+                        error = false;
                         break;
                     case '{':
                         Tokens.Add(new TokenClass(TokenType.LEFT_BRACE, "{", null, line));
+                        error = false;
                         break;
                     case '}':
                         Tokens.Add(new TokenClass(TokenType.RIGHT_BRACE, "}", null, line));
+                        error = false;
                         break;
                     case ',':
                         Tokens.Add(new TokenClass(TokenType.COMMA, ",", null, line));
+                        error = false;
                         break;
                     case '.':
                         Tokens.Add(new TokenClass(TokenType.DOT, ".", null, line));
+                        error = false;
                         break;
                     case '-':
                         Tokens.Add(new TokenClass(TokenType.MINUS, "-", null, line));
+                        error = false;
                         break;
                     case '+':
                         Tokens.Add(new TokenClass(TokenType.PLUS, "+", null, line));
+                        error = false;
                         break;
                     case ';':
                         Tokens.Add(new TokenClass(TokenType.SEMICOLON, ";", null, line));
+                        error = false;
                         break;
                     case '*':
                         Tokens.Add(new TokenClass(TokenType.STAR, "*", null, line));
-                        break;                   
+                        error = false;
+                        break;
                     case '\n':
                         line++;
                         break;
@@ -100,48 +111,56 @@ namespace LexerClass
                         if (i + 1 < strings.Length && strings[i + 1] == '=')
                         {
                             Tokens.Add(new TokenClass(TokenType.EXCLAMATION_EQUAL, "!=", null, line));
+                            error = false;
                             i++;
                         }
                         else
                         {
                             Tokens.Add(new TokenClass(TokenType.EXCLAMATION, "!", null, line));
+                            error = false;
                         }
                         break;
                     case '=':
                         if (i + 1 < strings.Length && strings[i + 1] == '=')
                         {
                             Tokens.Add(new TokenClass(TokenType.EQUAL_EQUAL, "==", null, line));
+                            error = false;
                             i++;
                         }
                         else
                         {
                             Tokens.Add(new TokenClass(TokenType.EQUAL, "=", null, line));
+                            error = false;
                         }
                         break;
                     case '<':
                         if (i + 1 < strings.Length && strings[i + 1] == '=')
                         {
                             Tokens.Add(new TokenClass(TokenType.LESS_EQUAL, "<=", null, line));
+                            error = false;
                             i++;
                         }
                         else
                         {
                             Tokens.Add(new TokenClass(TokenType.LESS, "<", null, line));
+                            error = false;
                         }
                         break;
                     case '>':
                         if (i + 1 < strings.Length && strings[i + 1] == '=')
                         {
                             Tokens.Add(new TokenClass(TokenType.GREATER_EQUAL, ">=", null, line));
+                            error = false;
                             i++;
                         }
                         else
                         {
                             Tokens.Add(new TokenClass(TokenType.GREATER, ">", null, line));
+                            error = false;
                         }
                         break;
                 }
-                
+
                 if (char.IsWhiteSpace(strings[i]))
                 {
                     continue;
@@ -149,8 +168,6 @@ namespace LexerClass
 
                 if (char.IsLetter(strings[i]))
                 {
-                    
-                    
                     int start = i;
 
                     while (i < strings.Length && (char.IsLetterOrDigit(strings[i]) || strings[i] == '_'))
@@ -159,15 +176,29 @@ namespace LexerClass
                     }
 
                     string identifier = strings.Substring(start, i - start);
+                    i--;
 
                     if (keywords.ContainsKey(identifier))
                     {
                         Tokens.Add(new TokenClass(keywords[identifier], identifier, null, line));
+                        error = false;
+                    }                    
+                    else if (Tokens[Tokens.Count - 1].Type == TokenType.STRING || Tokens[Tokens.Count - 1].Type == TokenType.INTEGER || Tokens[Tokens.Count - 1].Type == TokenType.DOUBLE || Tokens[Tokens.Count - 1].Type == TokenType.LEFT_BRACE)
+                    {
+                        Tokens.Add(new TokenClass(TokenType.IDENTIFIER, identifier, null, line));
+                        error = false;
                     }
                     else
                     {
-                        Tokens.Add(new TokenClass(TokenType.IDENTIFIER, identifier, null, line));
+                        bool alreadyExists = Tokens.Any(check => check.Lexeme == identifier);
+                        if (alreadyExists)
+                        {
+                            Tokens.Add(new TokenClass(TokenType.IDENTIFIER, identifier, null, line));
+                            error = false;
+                        }
+
                     }
+
                 }
                 else if (char.IsDigit(strings[i]))
                 {
@@ -176,51 +207,53 @@ namespace LexerClass
 
                     while (i < strings.Length && (char.IsDigit(strings[i]) || strings[i] == '.'))
                     {
-                        if (strings[i] == '.' && i + 1 < strings.Length && char.IsDigit(strings[i + 1]))
+                        if (strings[i] == '.' && i + 1 < strings.Length && char.IsDigit(strings[i + 1]) && Double == false)
                         {
                             Double = true;
-                        }                        
+                        }
                         i++;
                     }
-                    if (char.IsLetter(strings[i]))
-                    {
-                        Console.WriteLine($"Int or Double on line {line} contains character different to a number");
-                    }
                     string number = strings.Substring(start, i - start);
+                    i--;
 
                     if (Double)
                     {
                         Tokens.Add(new TokenClass(TokenType.DOUBLE, number, null, line));
+                        error = false;
                     }
                     else
                     {
                         Tokens.Add(new TokenClass(TokenType.INTEGER, number, null, line));
+                        error = false;
                     }
                 }
 
-                int open = 0;
-                if (strings[i] == '"' && open %2 == 0)
+                if (strings[i] == '"')
                 {
-                    open += 1;
-                    int start = i+1;
+                    int start = i + 1;
                     string Literal = "";
-                    while (start<strings.Length && strings[start] != '"')
+                    while (start < strings.Length && strings[start] != '"')
                     {
                         Literal += strings[start];
-                        start ++;
+                        start++;
                     }
                     if (start >= strings.Length)
                     {
                         Console.WriteLine($"String on line {line} not complete");
                     }
-                    
-                    
+
                     Tokens.Add(new TokenClass(TokenType.STRING, "\"" + Literal + "\"", Literal, line));
+                    error = false;
                     i = start;
+
                 }
 
+                if (error == true)
+                {
+                    Console.WriteLine($"Syntax error on line {line} with character {strings[i]}");
+                }
+                
             }
-
             for (int i = 0; i < Tokens.Count; i++)
             {
                 Console.Write(Tokens[i].Type);
@@ -232,8 +265,11 @@ namespace LexerClass
             Console.ReadLine();
 
         }
-     }      
+    }
 }
+
+//make sure to add a check for the end of the file and add an EOF token at the end of the list of tokens.
+//make sure to make the digit error handling as well as the string error handling.
 
 
 
