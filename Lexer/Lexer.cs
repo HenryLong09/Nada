@@ -41,7 +41,6 @@ namespace LexerClass
             { "imprimir", TokenType.PRINT },
             { "verdadero", TokenType.TRUE },
             { "falso", TokenType.FALSE },
-            { "clase", TokenType.CLASS },
             { "retornar", TokenType.RETURN },
             { "super", TokenType.SUPER },
             { "y", TokenType.AND },
@@ -55,6 +54,7 @@ namespace LexerClass
             List<TokenClass> Tokens = new List<TokenClass>();
             int line = 0;
             bool error;
+            bool SyntaxErrorFree = true;
 
             for (int i = 0; i < strings.Length; i++)
             {
@@ -183,21 +183,13 @@ namespace LexerClass
                         Tokens.Add(new TokenClass(keywords[identifier], identifier, null, line));
                         error = false;
                     }                    
-                    else if (Tokens[Tokens.Count - 1].Type == TokenType.STRING || Tokens[Tokens.Count - 1].Type == TokenType.INTEGER || Tokens[Tokens.Count - 1].Type == TokenType.DOUBLE || Tokens[Tokens.Count - 1].Type == TokenType.LEFT_BRACE)
-                    {
-                        Tokens.Add(new TokenClass(TokenType.IDENTIFIER, identifier, null, line));
-                        error = false;
-                    }
-                    else
-                    {
-                        bool alreadyExists = Tokens.Any(check => check.Lexeme == identifier);
-                        if (alreadyExists)
-                        {
+                    else 
+                    {            
                             Tokens.Add(new TokenClass(TokenType.IDENTIFIER, identifier, null, line));
                             error = false;
-                        }
-
+                      
                     }
+                    
 
                 }
                 else if (char.IsDigit(strings[i]))
@@ -221,7 +213,7 @@ namespace LexerClass
                         Tokens.Add(new TokenClass(TokenType.DOUBLE, number, null, line));
                         error = false;
                     }
-                    else
+                    else if (!Double)
                     {
                         Tokens.Add(new TokenClass(TokenType.INTEGER, number, null, line));
                         error = false;
@@ -251,17 +243,24 @@ namespace LexerClass
                 if (error == true)
                 {
                     Console.WriteLine($"Syntax error on line {line} with character {strings[i]}");
+                    SyntaxErrorFree = false;
                 }
                 
             }
-            for (int i = 0; i < Tokens.Count; i++)
+            if (SyntaxErrorFree)
             {
-                Console.Write(Tokens[i].Type);
-                Console.Write(Tokens[i].Lexeme);
-                Console.Write(Tokens[i].Literal);
-                Console.Write(Tokens[i].Line);
-                Console.WriteLine();
+                for (int i = 0; i < Tokens.Count; i++)
+                {
+                    Console.Write(Tokens[i].Type);
+                    Console.Write(Tokens[i].Lexeme);
+                    Console.Write(Tokens[i].Literal);
+                    Console.Write(Tokens[i].Line);
+                    Console.WriteLine();
+                }
+                ParserClass.Parser parser = new ParserClass.Parser(Tokens);
+                
             }
+            
             Console.ReadLine();
 
         }
