@@ -258,6 +258,7 @@ namespace LexerClass
                     Console.WriteLine();
                 }
                 ParserClass.Parser parser = new ParserClass.Parser(Tokens);
+                parser.Main();
                 
             }
             

@@ -1,7 +1,1 @@
-entero number=5;
-doble pi=3.14;
-cadena nombre = "Henry";
-imprimir h (nombre);
-si(number <10){
-imprimir ("small");
-}
+4 + 10 * 4 + 10 - 5 + 10 * 2 * 3

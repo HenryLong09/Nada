@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ParserClass
 {
@@ -18,44 +21,120 @@ namespace ParserClass
 
         public BinaryExpr(Expr left, TokenClass op, Expr right)
         {
-            Left = left;
-            Operator = op;
-            Right = right;
+            this.Left = left;
+            this.Operator = op;
+            this.Right = right;
+        }
+    }
+
+    class LiteralExpr : Expr
+    {
+        public string Value;
+
+        public LiteralExpr(string value)
+        {
+            this.Value = value;
         }
 
     }
-    
-          
 
-        // Continue the parser stages,  the class system and go back to basics for logic with returning values
-        
 
-        internal class Parser
+
+    // Continue the parser stages,  the class system and go back to basics for logic with returning values
+
+
+    internal class Parser
+    {
+        private List<TokenClass> tokens;
+        private List<Expr> exprs;
+        int count = 0;
+        bool started = false;
+
+        public Parser(List<TokenClass> tokens)
         {
-            private List<TokenClass> tokens;
-            int count = 0;
+            this.tokens = tokens;
+        }
 
-            public Parser(List<TokenClass> tokens)
+        public void Main()
+        {
+            Expr result = AdditionSubtraction();
+            WriteTree(result);
+
+        }
+
+        static void WriteTree(Expr result)
+        {
+            if (result.GetType() == typeof(LiteralExpr))
             {
-                this.tokens = tokens;
+                LiteralExpr lit = (LiteralExpr)result;
+                Console.Write(lit.Value);
+            }
+            else if (result.GetType() == typeof(BinaryExpr))
+            {
+                BinaryExpr bin = (BinaryExpr)result;
+                Console.Write("(");
+                WriteTree(bin.Left);
+                Console.Write(" " + bin.Operator.Lexeme + " ");
+                WriteTree(bin.Right);
+                Console.Write(")");
+            }
+        }
+
+        private Expr AdditionSubtraction()
+        {
+            int temp = 0;
+            Expr result;
+
+            //gets left value
+            result = MultiplicationDivision(ref temp);
+
+
+
+            while (temp < tokens.Count && (tokens[temp].Type == TokenType.PLUS || tokens[temp].Type == TokenType.MINUS))
+            {
+                TokenClass Operator = tokens[temp];
+                temp++;
+
+                Expr Right = MultiplicationDivision(ref temp);
+
+                result = new BinaryExpr(result, Operator, Right);
             }
 
-            private Expr AdditionSubtraction()
+            return result;
+
+
+
+
+        }
+
+        //4 + 10 * 4 + 10 - 5 + 10 * 2 * 3
+        //4 + 10 + 4 * 10 - 5 + 10 * 2 * 3
+
+        //4 + 10 + (4 * 10) - 5 + 10 * 2 * 3
+
+
+        private Expr MultiplicationDivision(ref int temp)
+        {
+            //gets left value
+            Expr result = new LiteralExpr(tokens[temp].Lexeme);
+            temp++;
+
+            while (temp < tokens.Count && (tokens[temp].Type == TokenType.STAR || tokens[temp].Type == TokenType.SLASH))
             {
-                int left = MultiplicationDivision();
-                return;
-            }
-            
-            4*10 * 4 + 10  5 + 10 * 2 * 3
-            private Expr MultiplicationDivision()
-            {
-                List<TokenClass> BinaryExpression = new List<TokenClass>();
-                int temp = 0;
-                int StarSlashPosition;
-                double DoubleReplacer;
-                
+                TokenClass Operator = tokens[temp];
+                temp++;
+
+                Expr rightSide = new LiteralExpr(tokens[temp].Lexeme);
+                temp++;
+
+
+                result = new BinaryExpr(result, Operator, rightSide);
+
             }
 
+            return result;
+
+        
 
         }
 
