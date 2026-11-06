@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\wolfg\\Desktop\\Nada\\",
+  "WorkspaceRootPath": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|C:\\Users\\wolfg\\Desktop\\Nada\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|\\\\crgs-server-ys1\\u251179\\cs\\yr13\\code\\nada\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|c:\\users\\wolfg\\desktop\\nada\\lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|C:\\Users\\wolfg\\Desktop\\Nada\\lexer\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:lexer\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\lexer\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|C:\\Users\\wolfg\\Desktop\\Nada\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{553F78A3-02ED-41A2-840F-EE28C6673241}|Nada.csproj|\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +22,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\wolfg\\Desktop\\Nada\\Program.cs",
+              "DocumentMoniker": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\wolfg\\Desktop\\Nada\\Program.cs",
+              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T18:35:10.058Z"
+              "WhenOpened": "2026-08-10T18:35:10.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Parser.cs",
-              "DocumentMoniker": "C:\\Users\\wolfg\\Desktop\\Nada\\Parser\\Parser.cs",
+              "DocumentMoniker": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Parser\\Parser.cs",
               "RelativeDocumentMoniker": "Parser\\Parser.cs",
-              "ToolTip": "C:\\Users\\wolfg\\Desktop\\Nada\\Parser\\Parser.cs",
-              "RelativeToolTip": "Parser\\Parser.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDgAAAANAAAAAAAAAA==",
+              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Parser\\Parser.cs*",
+              "RelativeToolTip": "Parser\\Parser.cs*",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwEgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T20:45:43.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Lexer.cs",
-              "DocumentMoniker": "C:\\Users\\wolfg\\Desktop\\Nada\\Lexer\\Lexer.cs",
+              "DocumentMoniker": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Lexer\\Lexer.cs",
               "RelativeDocumentMoniker": "Lexer\\Lexer.cs",
-              "ToolTip": "C:\\Users\\wolfg\\Desktop\\Nada\\Lexer\\Lexer.cs",
+              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Lexer\\Lexer.cs",
               "RelativeToolTip": "Lexer\\Lexer.cs",
               "ViewState": "AgIAAPYAAAAAAAAAAAAAALwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T10:16:15.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-10T10:16:15.098Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Token.cs",
-              "DocumentMoniker": "C:\\Users\\wolfg\\Desktop\\Nada\\Lexer\\Token.cs",
+              "DocumentMoniker": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Lexer\\Token.cs",
               "RelativeDocumentMoniker": "Lexer\\Token.cs",
-              "ToolTip": "C:\\Users\\wolfg\\Desktop\\Nada\\Lexer\\Token.cs",
+              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Lexer\\Token.cs",
               "RelativeToolTip": "Lexer\\Token.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T20:47:55.749Z",
               "EditorCaption": ""

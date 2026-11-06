@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace ParserClass
 {
-    abstract class Expr
+    abstract class ASTNode { }
+    
+    abstract class Expr:ASTNode
     {
     }
 
@@ -38,6 +41,17 @@ namespace ParserClass
 
     }
 
+    abstract class Stmt:ASTNode
+    {
+    }
+
+    class PrintStmt : Stmt
+    {
+        
+        public PrintStmt(Stmt left, Stmt right) { }
+    }
+
+
 
 
     // Continue the parser stages,  the class system and go back to basics for logic with returning values
@@ -46,7 +60,7 @@ namespace ParserClass
     internal class Parser
     {
         private List<TokenClass> tokens;
-        private List<Expr> exprs;
+        private List<ASTNode> List;
         int count = 0;
         bool started = false;
 
@@ -57,8 +71,23 @@ namespace ParserClass
 
         public void Main()
         {
-            Expr result = AdditionSubtraction();
-            WriteTree(result);
+            Expr Henry = new LiteralExpr("Henry");
+            List.Add(Henry);
+            //Expr result = AdditionSubtraction();
+            //WriteTree(result);
+
+            int tokenCount = 0;
+            
+
+            switch (tokens[tokenCount].Lexeme)
+            {
+                case "PRINT":
+                    {
+                        Stmt TempPrint = 
+                        
+                        return;                        
+                    }
+            }
 
         }
 
@@ -80,6 +109,7 @@ namespace ParserClass
             }
         }
 
+        private Stmt 
         private Expr AdditionSubtraction()
         {
             int temp = 0;
@@ -101,10 +131,6 @@ namespace ParserClass
             }
 
             return result;
-
-
-
-
         }
 
         //4 + 10 * 4 + 10 - 5 + 10 * 2 * 3
@@ -132,10 +158,7 @@ namespace ParserClass
 
             }
 
-            return result;
-
-        
-
+            return result;       
         }
 
     }

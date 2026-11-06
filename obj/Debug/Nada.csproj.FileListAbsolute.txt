@@ -12,3 +12,10 @@ C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.csproj.AssemblyReference.cache
 C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.csproj.CoreCompileInputs.cache
 C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.exe
 C:\Users\wolfg\Desktop\Nada\obj\Debug\Nada.pdb
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\bin\Debug\Nada.exe.config
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\bin\Debug\Nada.exe
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\bin\Debug\Nada.pdb
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\obj\Debug\Nada.csproj.AssemblyReference.cache
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\obj\Debug\Nada.csproj.CoreCompileInputs.cache
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\obj\Debug\Nada.exe
+\\crgs-server-ys1\u251179\CS\Yr13\Code\Nada\obj\Debug\Nada.pdb
