@@ -41,14 +41,30 @@ namespace ParserClass
 
     }
 
-    abstract class Stmt:ASTNode
+    class Stmt:ASTNode
     {
+        
     }
+
+    class LiteralStmt : Stmt
+    {
+        public string Value;
+
+        public LiteralStmt(string value)
+        {
+            this.Value = value;
+        }
+    }
+
+
 
     class PrintStmt : Stmt
     {
         
-        public PrintStmt(Stmt left, Stmt right) { }
+        public PrintStmt(TokenType type, Stmt left) 
+        { 
+        
+        }
     }
 
 
@@ -69,6 +85,7 @@ namespace ParserClass
             this.tokens = tokens;
         }
 
+        public int tokenCount = 0;
         public void Main()
         {
             Expr Henry = new LiteralExpr("Henry");
@@ -76,14 +93,15 @@ namespace ParserClass
             //Expr result = AdditionSubtraction();
             //WriteTree(result);
 
-            int tokenCount = 0;
+            
             
 
             switch (tokens[tokenCount].Lexeme)
             {
                 case "PRINT":
                     {
-                        Stmt TempPrint = 
+                        PrintStmt STMTPrint = PrintStatement();
+
                         
                         return;                        
                     }
@@ -109,7 +127,21 @@ namespace ParserClass
             }
         }
 
-        private Stmt 
+        private PrintStmt PrintStatement()
+        {
+            TokenType type = tokens[tokenCount].Type;
+            tokenCount++;
+            //left bracjet
+            tokenCount++;
+            LiteralStmt right = new LiteralStmt(tokens[tokenCount].Lexeme);
+            tokenCount++;
+            //right bracket
+            tokenCount++;
+            //semicolon
+            tokenCount++;
+             
+            return new PrintStmt(type,right);
+        }
         private Expr AdditionSubtraction()
         {
             int temp = 0;
@@ -159,6 +191,11 @@ namespace ParserClass
             }
 
             return result;       
+        }
+
+        private Expr Expression()
+        {
+
         }
 
     }

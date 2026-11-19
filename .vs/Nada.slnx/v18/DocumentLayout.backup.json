@@ -51,9 +51,9 @@
               "Title": "Parser.cs",
               "DocumentMoniker": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Parser\\Parser.cs",
               "RelativeDocumentMoniker": "Parser\\Parser.cs",
-              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Parser\\Parser.cs*",
-              "RelativeToolTip": "Parser\\Parser.cs*",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwEgAAAAeAAAAAAAAAA==",
+              "ToolTip": "\\\\crgs-server-ys1\\u251179\\CS\\Yr13\\Code\\Nada\\Parser\\Parser.cs",
+              "RelativeToolTip": "Parser\\Parser.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA1wE8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-10T20:45:43.478Z",
               "EditorCaption": ""
@@ -80,8 +80,7 @@
               "RelativeToolTip": "Lexer\\Token.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-10T20:47:55.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-10T20:47:55.749Z"
             }
           ]
         }
